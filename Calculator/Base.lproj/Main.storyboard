@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +19,369 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="xO3-nw-nvb">
+                                <rect key="frame" x="20" y="20" width="560" height="98"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="100"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.93555094332620137" green="0.96934807513750643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl3-gC-HaV">
+                                <rect key="frame" x="0.0" y="162" width="600" height="438"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csA-dV-CzI">
+                                        <rect key="frame" x="150" y="3" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="+/-">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="plusMinusButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Hi-nX-FCa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seh-Ps-Hgc">
+                                        <rect key="frame" x="300" y="3" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="%">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="persentageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLk-Mm-g8v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-bp-tcU">
+                                        <rect key="frame" x="450" y="3" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="equalitySignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bfq-Xe-Hnh"/>
+                                            <action selector="twoOperandsSingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a8M-2h-tPT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-eY-vxz">
+                                        <rect key="frame" x="0.0" y="90" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6q9-fq-jcJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECH-uq-SiB">
+                                        <rect key="frame" x="150" y="90" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQW-3l-rO5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ze-1p-uRb">
+                                        <rect key="frame" x="300" y="90" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ae-ov-lMK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-VL-Jlp">
+                                        <rect key="frame" x="450" y="90" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="equalitySignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdf-lt-vvB"/>
+                                            <action selector="twoOperandsSingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e4m-hT-DKl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBJ-Bt-lDb">
+                                        <rect key="frame" x="0.0" y="177" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BXW-db-kGi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ha-RK-Le0">
+                                        <rect key="frame" x="150" y="177" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GIA-CU-gzo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bF1-FK-gnx">
+                                        <rect key="frame" x="300" y="177" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HpW-U5-ynw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-0M-HHW">
+                                        <rect key="frame" x="450" y="177" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="×">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="equalitySignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J7P-o6-nCo"/>
+                                            <action selector="twoOperandsSingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCi-Mo-aOq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKZ-ag-PW5">
+                                        <rect key="frame" x="0.0" y="264" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lN7-Ug-7tL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMB-y5-TNQ">
+                                        <rect key="frame" x="150" y="264" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mt9-m9-yT4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-4n-dRV">
+                                        <rect key="frame" x="300" y="264" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b6n-yB-AyL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-Ra-Dhy">
+                                        <rect key="frame" x="450" y="264" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="÷">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="equalitySignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EhQ-zE-KO3"/>
+                                            <action selector="twoOperandsSingPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyO-Io-5q1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-H3-2gm">
+                                        <rect key="frame" x="0.0" y="351" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="√">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="squareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F1U-Gr-oty"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqN-Vl-QvK">
+                                        <rect key="frame" x="150" y="351" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j6H-QF-K5s"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXs-1W-cg2">
+                                        <rect key="frame" x="300" y="351" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577210000003" green="0.275587627" blue="0.66254908379999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dotButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhI-iw-ESd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGj-Gm-1WS">
+                                        <rect key="frame" x="450" y="351" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="equalitySignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3qL-hM-iB9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3l-Xt-7lx">
+                                        <rect key="frame" x="0.0" y="3" width="149" height="86"/>
+                                        <color key="backgroundColor" red="0.62867577209267367" green="0.27558762696772604" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="149" id="acb-sE-Rej"/>
+                                            <constraint firstAttribute="height" constant="86" id="scU-VD-SUX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <color key="tintColor" red="0.13749235126063306" green="0.14765798718749823" blue="0.66254908376963351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="C">
+                                            <color key="titleColor" red="0.92114494477931985" green="0.98416048192264782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wV3-T7-sCe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.41176470590000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zd2-VL-Jlp" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="028-3i-I6O"/>
+                                    <constraint firstItem="Yeg-4n-dRV" firstAttribute="baseline" secondItem="UMB-y5-TNQ" secondAttribute="baseline" id="0ub-Mb-ZK8"/>
+                                    <constraint firstItem="jBJ-Bt-lDb" firstAttribute="baseline" secondItem="9Ha-RK-Le0" secondAttribute="baseline" id="1kk-vT-r7i"/>
+                                    <constraint firstItem="UMB-y5-TNQ" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="3a1-yE-kND"/>
+                                    <constraint firstItem="vXs-1W-cg2" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="4dT-72-Fw2"/>
+                                    <constraint firstItem="0ze-1p-uRb" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="5JJ-Ui-Ui4"/>
+                                    <constraint firstAttribute="trailing" secondItem="NGj-Gm-1WS" secondAttribute="trailing" constant="1" id="7Gt-iX-VFF"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="baseline" secondItem="g9S-H3-2gm" secondAttribute="baseline" id="8DE-sb-Iqn"/>
+                                    <constraint firstItem="jBJ-Bt-lDb" firstAttribute="baseline" secondItem="bF1-FK-gnx" secondAttribute="baseline" id="8LF-I8-rs1"/>
+                                    <constraint firstItem="Yeg-4n-dRV" firstAttribute="leading" secondItem="Seh-Ps-Hgc" secondAttribute="leading" id="8Z5-gh-Jk3"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="leading" secondItem="Nhc-Ra-Dhy" secondAttribute="leading" id="8bs-Ek-1y3"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="leading" secondItem="g9S-H3-2gm" secondAttribute="leading" id="9Fo-Jc-QYq"/>
+                                    <constraint firstItem="9Ha-RK-Le0" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="9yc-qU-iop"/>
+                                    <constraint firstItem="zd2-VL-Jlp" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="ASJ-DH-M6F"/>
+                                    <constraint firstItem="Seh-Ps-Hgc" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="AYg-0b-oSS"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="baseline" secondItem="oqN-Vl-QvK" secondAttribute="baseline" id="BXq-es-NRy"/>
+                                    <constraint firstAttribute="bottom" secondItem="NGj-Gm-1WS" secondAttribute="bottom" constant="1" id="Bcx-ih-4PT"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="top" secondItem="Nhc-Ra-Dhy" secondAttribute="bottom" constant="1" id="DuZ-26-5BD"/>
+                                    <constraint firstItem="X4J-eY-vxz" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="FQ4-wJ-K2z"/>
+                                    <constraint firstItem="csA-dV-CzI" firstAttribute="leading" secondItem="F3l-Xt-7lx" secondAttribute="trailing" constant="1" id="GMp-gx-3qO"/>
+                                    <constraint firstItem="Yeg-4n-dRV" firstAttribute="leading" secondItem="bF1-FK-gnx" secondAttribute="leading" id="HGL-M0-Y04"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="leading" secondItem="UMB-y5-TNQ" secondAttribute="leading" id="KQ8-3S-Ebn"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="leading" secondItem="jBJ-Bt-lDb" secondAttribute="leading" id="LG3-dE-IbA"/>
+                                    <constraint firstItem="0ze-1p-uRb" firstAttribute="top" secondItem="zd2-VL-Jlp" secondAttribute="top" id="N0G-Dr-o8e"/>
+                                    <constraint firstItem="LLz-bp-tcU" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="NR3-Dw-vrL"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="leading" secondItem="csA-dV-CzI" secondAttribute="leading" id="NSG-WJ-Qy2"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="leading" secondItem="zd2-VL-Jlp" secondAttribute="leading" id="Os3-kW-P1x"/>
+                                    <constraint firstItem="qKZ-ag-PW5" firstAttribute="top" secondItem="jBJ-Bt-lDb" secondAttribute="bottom" constant="1" id="PqF-II-eeV"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="leading" secondItem="X4J-eY-vxz" secondAttribute="leading" id="QL1-hx-x19"/>
+                                    <constraint firstItem="X4J-eY-vxz" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="Qz3-O8-46t"/>
+                                    <constraint firstItem="9Ha-RK-Le0" firstAttribute="top" secondItem="ECH-uq-SiB" secondAttribute="bottom" constant="1" id="RPE-JA-Fve"/>
+                                    <constraint firstItem="csA-dV-CzI" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="Rnk-zx-8cX"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="S6M-xd-0Wy"/>
+                                    <constraint firstItem="zd2-VL-Jlp" firstAttribute="leading" secondItem="0ze-1p-uRb" secondAttribute="trailing" constant="1" id="SAz-oX-uib"/>
+                                    <constraint firstItem="1cI-0M-HHW" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="SCJ-qB-2Xg"/>
+                                    <constraint firstItem="oqN-Vl-QvK" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="SQR-8J-wNp"/>
+                                    <constraint firstItem="Yeg-4n-dRV" firstAttribute="baseline" secondItem="Nhc-Ra-Dhy" secondAttribute="baseline" id="Tt1-s8-GXs"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="UN9-zK-P1k"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="leading" secondItem="vXs-1W-cg2" secondAttribute="trailing" constant="1" id="UVU-9L-BGG"/>
+                                    <constraint firstItem="qKZ-ag-PW5" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="VaO-QI-m3X"/>
+                                    <constraint firstItem="qKZ-ag-PW5" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="Vac-cT-pOa"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="baseline" secondItem="vXs-1W-cg2" secondAttribute="baseline" id="Vi2-fL-66o"/>
+                                    <constraint firstItem="Nhc-Ra-Dhy" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="VpG-AY-72J"/>
+                                    <constraint firstItem="0ze-1p-uRb" firstAttribute="baseline" secondItem="zd2-VL-Jlp" secondAttribute="firstBaseline" id="Wfg-09-0SQ"/>
+                                    <constraint firstItem="UMB-y5-TNQ" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="X7z-MX-231"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="YRF-Cw-uIM"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="leading" secondItem="1cI-0M-HHW" secondAttribute="leading" id="Yb8-bZ-X6r"/>
+                                    <constraint firstItem="jBJ-Bt-lDb" firstAttribute="baseline" secondItem="1cI-0M-HHW" secondAttribute="baseline" id="Z7l-qg-2MX"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="leading" secondItem="qKZ-ag-PW5" secondAttribute="leading" id="aU1-BF-xt3"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="leading" secondItem="oqN-Vl-QvK" secondAttribute="leading" id="aqq-tW-MQU"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="leading" secondItem="gl3-gC-HaV" secondAttribute="leading" id="dYJ-5Z-FFA"/>
+                                    <constraint firstItem="g9S-H3-2gm" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="dYJ-cr-SWb"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="leading" secondItem="9Ha-RK-Le0" secondAttribute="leading" id="dpS-h8-LOY"/>
+                                    <constraint firstItem="1cI-0M-HHW" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="e0h-gp-olV"/>
+                                    <constraint firstItem="bF1-FK-gnx" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="f4M-VR-G6A"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="baseline" secondItem="zd2-VL-Jlp" secondAttribute="baseline" id="f9j-cK-hJQ"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="top" secondItem="gl3-gC-HaV" secondAttribute="top" constant="351" id="g1K-iD-D0N"/>
+                                    <constraint firstItem="X4J-eY-vxz" firstAttribute="top" secondItem="F3l-Xt-7lx" secondAttribute="bottom" constant="1" id="hRn-E3-1RL"/>
+                                    <constraint firstItem="NGj-Gm-1WS" firstAttribute="leading" secondItem="LLz-bp-tcU" secondAttribute="leading" id="hhX-MA-MlO"/>
+                                    <constraint firstItem="Yeg-4n-dRV" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="iO0-c5-ocr"/>
+                                    <constraint firstItem="jBJ-Bt-lDb" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="jdB-eA-Sjg"/>
+                                    <constraint firstItem="Yeg-4n-dRV" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="kgJ-jh-iG9"/>
+                                    <constraint firstItem="0ze-1p-uRb" firstAttribute="firstBaseline" secondItem="zd2-VL-Jlp" secondAttribute="baseline" id="lDg-z7-fEV"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="baseline" secondItem="csA-dV-CzI" secondAttribute="baseline" id="mDq-qZ-qKk"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="nlb-ho-jd1"/>
+                                    <constraint firstItem="csA-dV-CzI" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="oOv-Wn-mGU"/>
+                                    <constraint firstItem="Nhc-Ra-Dhy" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="oRQ-1E-WPv"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="baseline" secondItem="Seh-Ps-Hgc" secondAttribute="baseline" id="pKu-BM-7l3"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="baseline" secondItem="LLz-bp-tcU" secondAttribute="baseline" id="qu7-GW-gLw"/>
+                                    <constraint firstItem="9Ha-RK-Le0" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="r7b-uh-5He"/>
+                                    <constraint firstItem="Yeg-4n-dRV" firstAttribute="leading" secondItem="vXs-1W-cg2" secondAttribute="leading" id="s1u-16-xPf"/>
+                                    <constraint firstItem="jBJ-Bt-lDb" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="v34-GI-6SC"/>
+                                    <constraint firstItem="Seh-Ps-Hgc" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="vMB-qf-hYv"/>
+                                    <constraint firstItem="vXs-1W-cg2" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="vQo-o9-aSk"/>
+                                    <constraint firstItem="oqN-Vl-QvK" firstAttribute="height" secondItem="F3l-Xt-7lx" secondAttribute="height" id="ygC-R4-vNf"/>
+                                    <constraint firstItem="g9S-H3-2gm" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="yjC-7g-Zz2"/>
+                                    <constraint firstItem="bF1-FK-gnx" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="ylA-Et-89g"/>
+                                    <constraint firstItem="ECH-uq-SiB" firstAttribute="baseline" secondItem="X4J-eY-vxz" secondAttribute="baseline" id="yyA-7f-vaD"/>
+                                    <constraint firstItem="LLz-bp-tcU" firstAttribute="width" secondItem="F3l-Xt-7lx" secondAttribute="width" id="zGB-IW-73e"/>
+                                    <constraint firstItem="F3l-Xt-7lx" firstAttribute="top" secondItem="gl3-gC-HaV" secondAttribute="top" constant="3" id="zjv-iM-dkJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30196078431372547" green="0.41176470588235292" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xO3-nw-nvb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8Ar-1Z-xG2"/>
+                            <constraint firstItem="gl3-gC-HaV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9sz-gY-mwy"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xO3-nw-nvb" secondAttribute="leading" id="fmk-O2-xLq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gl3-gC-HaV" secondAttribute="bottom" id="kfe-QV-MHs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gl3-gC-HaV" secondAttribute="trailing" constant="-20" id="kog-RN-18T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xO3-nw-nvb" secondAttribute="trailing" id="rlt-xg-b3O"/>
+                            <constraint firstItem="gl3-gC-HaV" firstAttribute="top" secondItem="xO3-nw-nvb" secondAttribute="bottom" constant="44" id="z4P-Pg-n47"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayResultLabel" destination="xO3-nw-nvb" id="hFO-kX-61T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>
